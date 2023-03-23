@@ -41,7 +41,3 @@ function getProductos() {
             document.getElementById("productos").innerHTML += html
         })
 }
-
-function more_categorias(){
-    document.getElementById("categorias").style.height = "min-content"
-}
