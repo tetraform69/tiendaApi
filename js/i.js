@@ -9,7 +9,6 @@ function getCategorias() {
         .then(response => response.json())
         .then(data => {
             html = ""
-            console.log(data)
             data.forEach((categoria, index) => {
                 html += `<div class="categoria">
                     <img src="${categoria.image}" alt="categoria">
@@ -40,4 +39,16 @@ function getProductos() {
             });
             document.getElementById("productos").innerHTML += html
         })
+}
+
+function displayCategoria(){
+
+    dcategoria = document.getElementById('categorias')
+    console.log(dcategoria.className)
+
+    if(dcategoria.className == 'categorias hide'){
+        dcategoria.classList.remove('hide')
+    }else{
+        dcategoria.classList.add('hide')
+    }
 }

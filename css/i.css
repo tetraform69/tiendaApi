@@ -11,47 +11,45 @@ img{
     width: 100px;
 }
 
-#categorias{
+.categorias{
     display: grid;
-    grid-template-columns: repeat(4, 25%) ;
+    width: 100%;
+    position: fixed;
+    background: #202020;
+    grid-template-columns: repeat(5, 20%) ;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 20px;
     overflow: hidden;
+    margin-top: 100px;
 }
 
+.hide{
+    display: none;
+}
+    
 .categoria{
-    display: grid;
+    width: 90%;
+    display: flex;
     justify-self: center;
     align-self: center;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    width: 80%;
-    height: 300px;
-    overflow: hidden;
-    margin: 16px 0px;
+    margin: 16px;
 }
 
 .categoria img{
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    height: 100px;
     object-fit: cover;
     object-position: center;
-    grid-column: 1;
-    grid-row: 1;
 }
 
 .name_categoria{
+    background: #4b4b4b;
+    width: 70%;
     display: flex;
-    position: relative;
-    z-index: 1;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#202020aa, #202020aa);
-    grid-column: 1;
-    grid-row: 1;
     color: aliceblue;
-    font-size: xx-large;
+    font-size: medium;
     font-weight: bolder;
 }
 
@@ -81,6 +79,7 @@ img{
 }
 
 #productos{
+    padding-top: 100px;
     display: grid;
     width: 100%;
     grid-template-columns: 25% 25% 25% 25%;
@@ -108,4 +107,42 @@ img{
     width: 100%;
     height: 300px;
     object-fit: cover;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    background: #202020;
+}
+
+.nav-butons{
+    width: 60%;
+    display: flex;
+}
+
+.nav-butons button{
+    height: 50px;
+    width: 100px;
+    border: none;
+    background: none;
+    font-size: medium;
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+.nav-butons button:hover{
+    color: rgb(156, 161, 167);
+    cursor: pointer;
+}
+
+.search{
+    width: 20%;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
 }
