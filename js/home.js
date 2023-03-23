@@ -30,12 +30,15 @@ function getProductos() {
         .then(data => {
             html = ""
             data.forEach(product => {
-                html += `<div class="producto">
+                html += `
+                <div class="producto">
+                <a href="producto.html">
                 <img src="${product.images[0]}" alt="producto">
                 <p>${product.title}</p>
                 <p>${product.category.name}</p>
                 <p>$${product.price}</p>
-            </div>`
+                </a>
+                </div>`
             });
             document.getElementById("productos").innerHTML += html
         })
