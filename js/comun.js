@@ -11,7 +11,7 @@ function getCategorias() {
             html = ""
             console.log(data)
             data.forEach((categoria, index) => {
-                html += `<div class="categoria">
+                html += `<div class="categoria" onclick="filtrarCategoria('${categoria.id}')">
                     <img src="${categoria.image}" alt="categoria">
                     <div class="name_categoria">
                     <p>${categoria.name}</p>
@@ -72,7 +72,6 @@ function autoComplete() {
                 document.getElementById("list-productos").classList.remove('hide')
                 html = ""
                 filtro = data.filter(filtrarProducto)
-                console.log(filtro)
                 filtro.forEach(product => {
                     html += `
                     <a href="producto.html" class="producto-item">
@@ -84,6 +83,27 @@ function autoComplete() {
             } else {
                 document.getElementById("list-productos").classList.add('hide')
             }
+        })
+}
+
+function filtrarCategoria(categoriaId){
+    let url = `https://api.escuelajs.co/api/v1/products/?categoryId=${categoriaId}`
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            html = ""
+            console.log(data)
+            data.forEach(product => {
+                html += `
+                <a href="producto.html" class="producto">
+                <img src="${product.images[0]}" alt="producto">
+                <p>${product.title}</p>
+                <p>${product.category.name}</p>
+                <p>$${product.price}</p>
+                </a>`
+            });
+            document.getElementById("productos").innerHTML = html
         })
 }
 
