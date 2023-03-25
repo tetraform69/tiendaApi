@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/productos.css">
     <link rel="stylesheet" href="/css/comun.css">
     <script src="/js/comun.js" defer></script>
     <title>Document</title>
 </head>
-<body>
+<body onload="getProductos()">
     <nav>
         <div class="nav-butons">
-            <button type="button" onclick="getProductos()">Home</button>
+            <a href="/html/home.html"><button type="button" onclick="getProductos()">Home</button></a>
             <button type="button" onclick="displayCategoria()" id="btnCategorias">categorias</button>
             <button type="button">producto</button>
         </div>

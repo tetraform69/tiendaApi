@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/comun.css">
+    <link rel="stylesheet" href="/css/productos.css">
+    <script src="/js/producto.js" defer></script>
+    <script src="/js/comun.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
     <nav>
         <div class="nav-butons">
-            <button type="button">Home</button>
-            <button type="button" onclick="displayCategoria()">categorias</button>
+            <a href="/html/home.html"><button type="button" onclick="getProductos()">Home</button></a>
+            <button type="button" onclick="displayCategoria()" id="btnCategorias">categorias</button>
             <button type="button">producto</button>
         </div>
-        <input type="search" class="search" placeholder="Buscar...">
+        <input type="search" class="search" id="search" placeholder="Buscar..." onkeyup="autoComplete()"
+            onclick="autoComplete()">
+        <div class="list-productos hide" id="list-productos">
+
+        </div>
     </nav>
+    <div id="categorias" class="categorias hide">
+
+    </div>
+    <div id="productos">
+
+    </div>
+    <div class="detalle-producto" id="detalle-producto">
+        
+    </div>
 </body>
+
 </html>

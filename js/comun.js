@@ -1,6 +1,5 @@
 
 getCategorias()
-getProductos()
 
 function getCategorias() {
     let url = 'https://api.escuelajs.co/api/v1/categories'
@@ -33,7 +32,7 @@ function getProductos() {
             console.log(data)
             data.forEach(product => {
                 html += `
-                <a href="producto.html" class="producto">
+                <a href="producto.html" onclick="productoId('${product.id}')" class="producto">
                 <img src="${product.images[0]}" alt="producto">
                 <p>${product.title}</p>
                 <p>${product.category.name}</p>
@@ -74,7 +73,7 @@ function autoComplete() {
                 filtro = data.filter(filtrarProducto)
                 filtro.forEach(product => {
                     html += `
-                    <a href="producto.html" class="producto-item">
+                    <a href="producto.html" onclick="productoId('${product.id}')" class="producto-item">
                     <img src="${product.images[0]}" alt="producto">
                     <p>${product.title}</p>
                     </a>`
@@ -95,8 +94,7 @@ function filtrarCategoria(categoriaId){
             html = ""
             console.log(data)
             data.forEach(product => {
-                html += `
-                <a href="producto.html" class="producto">
+                html += `<a href="producto.html" onclick="productoId('${product.id}')" class="producto">
                 <img src="${product.images[0]}" alt="producto">
                 <p>${product.title}</p>
                 <p>${product.category.name}</p>
@@ -105,6 +103,10 @@ function filtrarCategoria(categoriaId){
             });
             document.getElementById("productos").innerHTML = html
         })
+}
+
+function productoId(idProducto){
+    localStorage.setItem("idProducto", idProducto)
 }
 
 window.addEventListener('click', (event) => {
