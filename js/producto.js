@@ -19,7 +19,7 @@ function getProducto(){
                 <p>$${data.price}</p>
                 <div class="carrito-product">
                     <input type="number">
-                    <button>Agregar al carrito</button>
+                    <button onclick="">Agregar al carrito</button>
                 </div>
             </div>
         </div>`
@@ -27,3 +27,4 @@ function getProducto(){
             document.getElementById("detalle-producto").innerHTML = html
         })
 }
+

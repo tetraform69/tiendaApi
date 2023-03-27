@@ -17,6 +17,10 @@ img {
     object-position: center;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .categorias {
     display: grid;
     width: 100%;
@@ -92,7 +96,6 @@ nav {
 
 .nav-butons button:hover {
     color: rgb(156, 161, 167);
-    cursor: pointer;
 }
 
 .search {
@@ -131,4 +134,8 @@ nav {
 .producto-item img{
     height: 100%;
     width: 30%;
+}
+
+.space{
+    padding-top: 100px;
 }

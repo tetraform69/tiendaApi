@@ -19,7 +19,6 @@
 }
 
 #productos {
-    padding-top: 100px;
     display: grid;
     width: 100%;
     grid-template-columns: 25% 25% 25% 25%;
@@ -64,7 +63,6 @@
     justify-content: center;
     width: 100%;
     height: 80vh;
-    margin: 10px 0px;
 }
 
 .product{
@@ -92,7 +90,7 @@
 
 .info-product h3{
     font-size: xx-large;
-    margin: 0;
+    margin: 0 0 20px 0px;
 }
 
 .info-product h4{
@@ -105,6 +103,25 @@
     cursor: pointer;
 }
 
+.info-product p{
+    font-size: larger;
+}
+
 .info-product input, .info-product button{
     width: 25%;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.info-product button{
+    background: #6dffff;
+    font-weight: bold;
+    transition: 250ms;
+}
+
+.info-product button:hover{
+    background: #776dff;
+    color: aliceblue;
 }

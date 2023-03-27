@@ -10,12 +10,12 @@ function getCategorias() {
             html = ""
             console.log(data)
             data.forEach((categoria, index) => {
-                html += `<div class="categoria" onclick="filtrarCategoria('${categoria.id}')">
+                html += `<a href="#productos" class="categoria" onclick="filtrarCategoria('${categoria.id}')">
                     <img src="${categoria.image}" alt="categoria">
                     <div class="name_categoria">
                     <p>${categoria.name}</p>
                     </div>
-                    </div>`
+                    </a>`
 
             })
             document.getElementById("categorias").innerHTML = html
