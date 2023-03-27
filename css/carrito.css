@@ -1,0 +1,11 @@
+img{
+    height: 100px;
+}
+
+.table{
+    margin: 50px 0px;
+}
+
+nav{
+    justify-content: start;
+}

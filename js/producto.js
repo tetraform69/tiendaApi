@@ -18,8 +18,8 @@ function getProducto(){
                 <p>${data.description}</p>
                 <p>$${data.price}</p>
                 <div class="carrito-product">
-                    <input type="number">
-                    <button onclick="">Agregar al carrito</button>
+                    <input id="cantidad" type="number" value="1">
+                    <button onclick="addCarrito('${data.id}')">Agregar al carrito</button>
                 </div>
             </div>
         </div>`
@@ -28,3 +28,36 @@ function getProducto(){
         })
 }
 
+function addCarrito(id){
+    let cantidad = parseInt(document.getElementById('cantidad').value) 
+    
+    if (isNaN(cantidad) || cantidad <= 0){
+        document.getElementById('cantidad').value = 1
+        Swal.fire({
+            icon: 'warning',
+            title: 'cantidad',
+            text: 'No puede dejar la cantidad vacia'
+          })
+    }else{
+        p = {
+            'id': id,
+            'cantidad': cantidad
+        }
+
+        productos = localStorage.getItem('productos')
+        productos = JSON.parse(productos)
+
+        if (productos == null){
+            productos = []
+        }
+
+        productos.push(p)
+        localStorage.setItem('productos', JSON.stringify(productos))
+        
+        Swal.fire({
+            icon: 'success',
+            title: 'Agregado',
+            text: 'Su producto fue agregado correctamente al carrito'
+          })
+    }
+}

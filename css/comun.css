@@ -84,7 +84,7 @@ nav {
     display: flex;
 }
 
-.nav-butons button {
+nav button {
     height: 50px;
     width: 100px;
     border: none;
@@ -94,7 +94,7 @@ nav {
     color: aliceblue;
 }
 
-.nav-butons button:hover {
+nav button:hover {
     color: rgb(156, 161, 167);
 }
 
@@ -139,3 +139,4 @@ nav {
 .space{
     padding-top: 100px;
 }
+
