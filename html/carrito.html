@@ -22,6 +22,18 @@
     <nav>
         <div class="nav-butons">
             <a href="/html/home.html"><button type="button">Home</button></a>
+            <a id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                <button type="button">Moneda</button>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" onclick="Moneda('USD')">USD</a></li>
+                <li><a class="dropdown-item" href="#" onclick="Moneda('COP')">COP</a></li>
+                <li><a class="dropdown-item" href="#" onclick="Moneda('EUR')">EUR</a></li>
+                <li><a class="dropdown-item" href="#" onclick="Moneda('JPY')">JPY</a></li>
+                <li><a class="dropdown-item" href="#" onclick="Moneda('GBP')">GBP</a></li>
+                <li><a class="dropdown-item" href="#" onclick="Moneda('AUD')">AUD</a></li>
+                <li><a class="dropdown-item" href="#" onclick="Moneda('CAD')">CAD</a></li>
+            </ul>
         </div>
     </nav>
     <div class="space"></div>
@@ -42,6 +54,7 @@
         </table>
     </div>
 
+    <input type="hidden" value="USD" id="moneda">
 </body>
 
 </html>
